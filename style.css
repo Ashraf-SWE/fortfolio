@@ -22,11 +22,13 @@
 
 /* HERO */
 .hero {
-    background: #2563EB;
+    background: linear-gradient(135deg, #14B8A6, #3B82F6);
     color: white;
     text-align: center;
     padding: 100px 20px;
 }
+
+
 
 .hero button {
     padding: 10px 20px;
@@ -350,4 +352,58 @@ footer {
         font-size: 16px;
     }
 }
+/* HIRE ME BUTTON STYLE - BLACK */
+.hire-btn {
+    background: black !important;       /* Black background */
+    color: white;            /* White text */
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
 
+/* HOVER EFFECT + ZOOM */
+.hire-btn:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Optional: Border glow (subtle white glow for black) */
+.hire-btn::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 30px;
+    background: linear-gradient(45deg, #fff, #fff, #fff, #fff); /* White glow */
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+    animation: rotateGlow 2s linear infinite;
+}
+
+.hire-btn:hover::after {
+    opacity: 0.3; /* subtle glow */
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hire-btn {
+        width: 90%;
+        padding: 14px 0;
+        font-size: 16px;
+    }
+}
